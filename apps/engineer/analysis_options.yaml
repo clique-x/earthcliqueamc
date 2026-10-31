@@ -1,0 +1,9 @@
+include: package:flutter_lints/flutter.yaml
+
+formatter:
+  page_width: 140
+
+linter:
+  rules:
+    - prefer_final_locals
+    - avoid_dynamic_calls

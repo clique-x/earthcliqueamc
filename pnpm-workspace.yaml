@@ -1,0 +1,9 @@
+packages:
+  - apps/api
+  - apps/web
+  - packages/*
+onlyBuiltDependencies:
+  - esbuild
+ignoredBuiltDependencies:
+  - sharp
+  - unrs-resolver

@@ -1,0 +1,22 @@
+{
+  "name": "earthclique-amc",
+  "private": true,
+  "packageManager": "pnpm@10.30.1",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:generate": "pnpm --filter @amc/db generate",
+    "db:migrate": "pnpm --filter @amc/db migrate",
+    "db:seed": "pnpm --filter @amc/db seed",
+    "simulate:engineer": "pnpm --filter @amc/api simulate:engineer"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "turbo": "^2.11.10",
+    "typescript": "~5.9.3"
+  }
+}

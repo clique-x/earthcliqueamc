@@ -1,0 +1,5 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Debug only: the local API runs over plain HTTP (emulator 10.0.2.2 or the Mac's LAN IP). -->
+    <application android:usesCleartextTraffic="true" />
+</manifest>
