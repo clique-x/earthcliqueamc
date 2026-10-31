@@ -44,7 +44,7 @@ class EarningsScreen extends ConsumerWidget {
             ),
             const SizedBox(height: 16),
             Text(
-              'Job value of closed jobs (visit fee plus approved parts). Payments are settled by Earthclique outside the app for now.',
+              'Job value of closed jobs (visit fee plus approved parts). Payments are settled by EarthClique outside the app for now.',
               style: muted,
             ),
             const SizedBox(height: 16),

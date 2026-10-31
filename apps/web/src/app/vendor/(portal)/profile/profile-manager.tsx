@@ -39,7 +39,7 @@ export function ProfileManager() {
 
   return (
     <>
-      <PageHeader title="Profile & verification" description="What companies see about you, and the documents Earthclique needs to verify your business." />
+      <PageHeader title="Profile & verification" description="What companies see about you, and the documents EarthClique needs to verify your business." />
       {!me ? (
         <div className="space-y-4">
           <Skeleton className="h-64 w-full" />
@@ -208,7 +208,7 @@ function SubscriptionCard({ vendor }: { vendor: VendorProfile }) {
           </div>
           <div>
             <dt className="text-muted-foreground">Subscription</dt>
-            <dd className="font-medium">{vendor.subscribed ? `Valid until ${formatDateTime(vendor.subscriptionUntil)}` : "Not active — contact Earthclique"}</dd>
+            <dd className="font-medium">{vendor.subscribed ? `Valid until ${formatDateTime(vendor.subscriptionUntil)}` : "Not active — contact EarthClique"}</dd>
           </div>
           <div>
             <dt className="text-muted-foreground">Rating</dt>
@@ -245,7 +245,7 @@ function DocumentsCard({ canUpload }: { canUpload: boolean }) {
       await uploadFile(`/vendor/documents?docType=${docType}&label=${encodeURIComponent(label)}`, file);
       form.reset();
       await mutate();
-      toast.success("Document uploaded — Earthclique will verify it");
+      toast.success("Document uploaded — EarthClique will verify it");
     } catch (err) {
       toast.error(errorMessage(err));
     } finally {

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import { Field, FormError } from "@/components/forms/field";
+import { AuthFrame } from "@/components/brand-mark";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -40,7 +41,7 @@ export function SignupForm() {
   }
 
   return (
-    <div className="flex flex-1 items-center justify-center p-4">
+    <AuthFrame>
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle className="text-xl">Register your company</CardTitle>
@@ -81,6 +82,6 @@ export function SignupForm() {
           </form>
         </CardContent>
       </Card>
-    </div>
+    </AuthFrame>
   );
 }

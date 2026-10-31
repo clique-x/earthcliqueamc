@@ -17,7 +17,7 @@ const NAV = [
 export function CompanyShell({ children }: { children: ReactNode }) {
   const { data } = useApi<Me>("/company/me", "company");
   return (
-    <AppShell audience="company" title="Earthclique AMC" items={NAV} account={data ? `${data.user.name} · ${data.company.name}` : null}>
+    <AppShell audience="company" title="EarthClique AMC" items={NAV} account={data ? `${data.user.name} · ${data.company.name}` : null}>
       {children}
     </AppShell>
   );

@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 
 /// The only place colours are defined. Brand and status colours match the web portal's tokens.
 abstract final class AppColors {
-  static const brand = Color(0xFF007F56);
+  // EarthClique brand palette (Brand Book v1.0, p.13). Teal leads, coral only for small accents.
+  static const brand = Color(0xFF0E6B76); // Teal
+  static const deepTeal = Color(0xFF0B2E33);
+  static const tealBright = Color(0xFF1F8F9B);
+  static const coral = Color(0xFFEE5A3C);
+  static const mist = Color(0xFFBFD9DC);
+  static const tint = Color(0xFFE7F1F2);
+  static const mutedText = Color(0xFF52696D);
+
   static const online = Color(0xFF25984D);
   static const offline = Color(0xFF6B7280);
   static const accept = Color(0xFF25984D);
@@ -10,7 +18,7 @@ abstract final class AppColors {
   static const warning = Color(0xFFED990E);
   static const info = Color(0xFF007CD9);
   static const urgent = Color(0xFFE5484D);
-  static const ringBackground = Color(0xFF0E1A2B);
+  static const ringBackground = deepTeal;
   static const onRing = Color(0xFFFFFFFF);
   static const onRingMuted = Color(0xB3FFFFFF);
   static const ringCard = Color(0x1FFFFFFF);
@@ -19,7 +27,7 @@ abstract final class AppColors {
 abstract final class AppTheme {
   static const radius = 16.0;
 
-  /// Light brand-green surface for highlighted cards; normal text colours stay readable on it.
+  /// Light brand-teal surface for highlighted cards; normal text colours stay readable on it.
   static Color brandTint(ColorScheme scheme) => Color.alphaBlend(scheme.primary.withValues(alpha: 0.08), scheme.surface);
 
   static BorderSide brandBorder(ColorScheme scheme) => BorderSide(color: scheme.primary.withValues(alpha: 0.35));
@@ -27,8 +35,20 @@ abstract final class AppTheme {
   static ThemeData light() {
     final scheme = ColorScheme.fromSeed(
       seedColor: AppColors.brand,
-      // Keeps the primary colour close to the brand green instead of a tonal reinterpretation.
+      // Keeps the primary colour close to the brand teal instead of a tonal reinterpretation.
       dynamicSchemeVariant: DynamicSchemeVariant.fidelity,
+    ).copyWith(
+      // Pin the exact brand values: white base, teal actions, deep teal text, coral as the accent.
+      primary: AppColors.brand,
+      onPrimary: Colors.white,
+      tertiary: AppColors.coral,
+      onTertiary: Colors.white,
+      surface: Colors.white,
+      onSurface: AppColors.deepTeal,
+      onSurfaceVariant: AppColors.mutedText,
+      surfaceContainerLowest: Colors.white,
+      surfaceContainerLow: const Color(0xFFF3F8F9),
+      outlineVariant: const Color(0xFFD5E6E8),
     );
     final base = ThemeData(colorScheme: scheme, useMaterial3: true);
     final text = base.textTheme;

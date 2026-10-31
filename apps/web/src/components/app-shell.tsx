@@ -4,6 +4,7 @@ import { LogOut } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Suspense, type ReactNode } from "react";
+import { BrandMark } from "@/components/brand-mark";
 import { Button } from "@/components/ui/button";
 import { api, LOGIN_PATHS, type Audience } from "@/lib/api";
 import { clearApiCache } from "@/lib/use-api";
@@ -23,7 +24,7 @@ function NavLinks({ items }: { items: NavItem[] }) {
             href={item.href}
             className={cn(
               "rounded-md px-3 py-1.5 text-sm font-medium transition-colors",
-              active ? "bg-primary/10 text-primary" : "text-muted-foreground hover:text-foreground",
+              active ? "bg-tint text-primary font-semibold" : "text-muted-foreground hover:text-foreground",
             )}
           >
             {item.label}
@@ -47,8 +48,8 @@ export function AppShell({ audience, title, items, account, children }: { audien
     <div className="flex min-h-full flex-col">
       <header className="sticky top-0 z-20 border-b bg-background/95 backdrop-blur">
         <div className="mx-auto flex h-14 max-w-7xl items-center gap-4 px-4">
-          <Link href={items[0]?.href ?? "/"} className="flex items-center gap-2 font-semibold">
-            <span className="flex size-7 items-center justify-center rounded-md bg-primary text-xs font-bold text-primary-foreground">EC</span>
+          <Link href={items[0]?.href ?? "/"} className="flex items-center gap-2 font-bold text-deep-teal">
+            <BrandMark size={28} />
             <span className="hidden sm:inline">{title}</span>
           </Link>
           <nav className="flex flex-1 items-center gap-1 overflow-x-auto">
@@ -71,8 +72,9 @@ export function PageHeader({ title, description, actions }: { title: string; des
   return (
     <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
       <div>
-        <h1 className="text-2xl font-semibold tracking-tight">{title}</h1>
-        {description && <p className="mt-1 text-sm text-muted-foreground">{description}</p>}
+        <h1 className="text-2xl font-bold tracking-tight">{title}</h1>
+        <span aria-hidden className="accent-bar mt-2" />
+        {description && <p className="mt-2 text-sm text-muted-foreground">{description}</p>}
       </div>
       {actions && <div className="flex gap-2">{actions}</div>}
     </div>

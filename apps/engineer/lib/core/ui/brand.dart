@@ -1,22 +1,38 @@
 import 'package:flutter/material.dart';
 
-/// The "EC" mark used on the web portal, so both products feel like one brand.
+import '../theme/app_theme.dart';
+
+/// The EarthClique mark as supplied (app-icon version), same file as the web portal.
+/// Never recolour or redraw it (Brand Book p.12).
 class BrandMark extends StatelessWidget {
   const BrandMark({super.key, this.size = 56});
   final double size;
 
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return Container(
-      width: size,
-      height: size,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(color: scheme.primary, borderRadius: BorderRadius.circular(size * 0.28)),
-      child: Text(
-        'EC',
-        style: TextStyle(color: scheme.onPrimary, fontWeight: FontWeight.w800, fontSize: size * 0.36, letterSpacing: 0.5),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(size * 0.22),
+      child: Image.asset(
+        'assets/brand/earthclique-app-icon.png',
+        width: size,
+        height: size,
+        fit: BoxFit.cover,
+        semanticLabel: 'EarthClique',
       ),
+    );
+  }
+}
+
+/// Short coral bar under a headline (Brand Book p.17).
+class AccentBar extends StatelessWidget {
+  const AccentBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 48,
+      height: 4,
+      decoration: BoxDecoration(color: AppColors.coral, borderRadius: BorderRadius.circular(2)),
     );
   }
 }

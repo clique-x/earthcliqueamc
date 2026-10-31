@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import { Field, FormError } from "@/components/forms/field";
+import { AuthFrame } from "@/components/brand-mark";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -13,7 +14,7 @@ import { clearApiCache } from "@/lib/use-api";
 const COPY: Record<Audience, { title: string; description: string; next: string }> = {
   company: { title: "Sign in", description: "Raise and track support tickets for your company.", next: "/app" },
   vendor: { title: "Vendor sign in", description: "Receive project requirements and send quotes.", next: "/vendor" },
-  admin: { title: "Ops console", description: "Earthclique operations team sign-in.", next: "/admin" },
+  admin: { title: "Ops console", description: "EarthClique operations team sign-in.", next: "/admin" },
 };
 
 export function LoginForm({ audience }: { audience: Audience }) {
@@ -38,7 +39,7 @@ export function LoginForm({ audience }: { audience: Audience }) {
   }
 
   return (
-    <div className="flex flex-1 items-center justify-center p-4">
+    <AuthFrame>
       <Card className="w-full max-w-sm">
         <CardHeader>
           <CardTitle className="text-xl">{copy.title}</CardTitle>
@@ -67,6 +68,6 @@ export function LoginForm({ audience }: { audience: Audience }) {
           </form>
         </CardContent>
       </Card>
-    </div>
+    </AuthFrame>
   );
 }

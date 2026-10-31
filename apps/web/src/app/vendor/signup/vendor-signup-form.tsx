@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import { toast } from "sonner";
 import { Field, FormError } from "@/components/forms/field";
+import { AuthFrame } from "@/components/brand-mark";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -59,7 +60,7 @@ export function VendorSignupForm() {
   }
 
   return (
-    <div className="flex flex-1 items-center justify-center p-4">
+    <AuthFrame>
       <Card className="w-full max-w-lg">
         <CardHeader>
           <CardTitle className="text-xl">Register as a vendor</CardTitle>
@@ -145,6 +146,6 @@ export function VendorSignupForm() {
           </form>
         </CardContent>
       </Card>
-    </div>
+    </AuthFrame>
   );
 }

@@ -96,11 +96,11 @@ export async function adminRfqRoutes(app: FastifyInstance) {
     const users = await db.query.vendorUsers.findMany({ where: eq(vendorUsers.vendorId, id), columns: { email: true } });
     await sendEmail({
       to: users.map((u) => u.email),
-      subject: { approved: "Your Earthclique vendor account is verified", rejected: "Your Earthclique vendor application", suspended: "Your Earthclique vendor account is suspended" }[status],
+      subject: { approved: "Your EarthClique vendor account is verified", rejected: "Your EarthClique vendor application", suspended: "Your EarthClique vendor account is suspended" }[status],
       text:
         status === "approved"
           ? `${v.name} is now verified. With an active subscription you'll receive matching project requirements.\n\n${portalUrl("/vendor")}`
-          : `${v.name}: ${reason}\n\nContact Earthclique support if you have questions.`,
+          : `${v.name}: ${reason}\n\nContact EarthClique support if you have questions.`,
     });
     return { ok: true };
   }

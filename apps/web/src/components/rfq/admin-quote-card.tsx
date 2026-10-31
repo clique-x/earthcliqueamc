@@ -25,7 +25,7 @@ export function AdminQuoteCard({ quote: q, awarded }: { quote: QuoteView; awarde
               ) : (
                 "Vendor"
               )}
-              {v?.isEarthclique && <span className="text-xs font-normal text-primary">Earthclique</span>}
+              {v?.isEarthclique && <span className="text-xs font-normal text-primary">EarthClique</span>}
               <QuoteStatusBadge status={q.status} />
             </CardTitle>
             {v && (

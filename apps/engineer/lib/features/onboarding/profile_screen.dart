@@ -103,7 +103,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
             onChanged: (v) => setState(() => _radius = v),
           ),
           const SizedBox(height: 16),
-          Text('How do you work with Earthclique?', style: text.titleSmall),
+          Text('How do you work with EarthClique?', style: text.titleSmall),
           const SizedBox(height: 8),
           SegmentedButton<String>(
             expandedInsets: EdgeInsets.zero,

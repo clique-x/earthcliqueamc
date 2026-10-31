@@ -297,12 +297,12 @@ export function VendorReview({ params }: { params: Promise<{ id: string }> }) {
 
         <Card>
           <CardHeader>
-            <CardTitle>Earthclique&apos;s own vendor</CardTitle>
+            <CardTitle>EarthClique&apos;s own vendor</CardTitle>
           </CardHeader>
           <CardContent className="space-y-2">
-            <EarthcliqueSwitch checked={v.isEarthclique} disabled={busy} onChange={(isEarthclique) => run(isEarthclique ? "Marked as Earthclique's own vendor" : "Unmarked as Earthclique's own vendor", () => api(`/admin/vendors/${id}/earthclique`, { method: "PUT", body: { isEarthclique } }))} />
+            <EarthcliqueSwitch checked={v.isEarthclique} disabled={busy} onChange={(isEarthclique) => run(isEarthclique ? "Marked as EarthClique's own vendor" : "Unmarked as EarthClique's own vendor", () => api(`/admin/vendors/${id}/earthclique`, { method: "PUT", body: { isEarthclique } }))} />
             <p className="text-xs text-muted-foreground">
-              Marks this account as Earthclique&apos;s in-house team. It only receives requirements when &ldquo;Allow Earthclique&apos;s own vendor account to bid&rdquo; is on in Project quotation settings.
+              Marks this account as EarthClique&apos;s in-house team. It only receives requirements when &ldquo;Allow EarthClique&apos;s own vendor account to bid&rdquo; is on in Project quotation settings.
             </p>
           </CardContent>
         </Card>

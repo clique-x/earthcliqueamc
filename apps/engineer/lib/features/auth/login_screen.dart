@@ -52,8 +52,10 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
           children: [
             const Align(alignment: Alignment.centerLeft, child: BrandMark()),
             const SizedBox(height: 24),
-            Text('Earthclique Engineer', style: text.headlineMedium),
-            const SizedBox(height: 8),
+            Text('EarthClique Engineer', style: text.headlineMedium),
+            const SizedBox(height: 12),
+            const AccentBar(),
+            const SizedBox(height: 12),
             Text('Sign in with your mobile number to get IT, network and CCTV jobs near you.', style: muted),
             const SizedBox(height: 32),
             TextField(

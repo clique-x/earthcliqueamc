@@ -73,7 +73,7 @@ export function VendorList() {
                     <Link href={`/admin/vendors/${v.id}`} className="hover:underline">
                       <span className="font-medium">
                         {v.name}
-                        {v.isEarthclique && <span className="ml-2 text-xs font-normal text-primary">Earthclique</span>}
+                        {v.isEarthclique && <span className="ml-2 text-xs font-normal text-primary">EarthClique</span>}
                       </span>
                       <span className="block text-xs text-muted-foreground">
                         {v.city} · <span className="font-mono">{v.gstin}</span>

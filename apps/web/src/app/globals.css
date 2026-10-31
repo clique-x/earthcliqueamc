@@ -10,6 +10,12 @@
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-sans);
+  --color-coral: var(--brand-coral);
+  --color-coral-light: var(--brand-coral-light);
+  --color-deep-teal: var(--brand-deep-teal);
+  --color-teal-bright: var(--brand-teal-bright);
+  --color-mist: var(--brand-mist);
+  --color-tint: var(--brand-tint);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -51,81 +57,95 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/*
+ * EarthClique brand palette (Brand Book v1.0, chapter 3).
+ * Light layouts: white leads, teal carries headings and actions, deep teal is text,
+ * coral is the signal colour for small accents only (bars, dots, one main call to action).
+ */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.52 0.13 165);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --brand-deep-teal: #0b2e33;
+  --brand-teal: #0e6b76;
+  --brand-teal-bright: #1f8f9b;
+  --brand-coral: #ee5a3c;
+  --brand-coral-light: #ffb4a3;
+  --brand-mist: #bfd9dc;
+  --brand-tint: #e7f1f2;
+
+  --background: #ffffff;
+  --foreground: var(--brand-deep-teal);
+  --card: #ffffff;
+  --card-foreground: var(--brand-deep-teal);
+  --popover: #ffffff;
+  --popover-foreground: var(--brand-deep-teal);
+  --primary: var(--brand-teal);
+  --primary-foreground: #ffffff;
+  --secondary: var(--brand-tint);
+  --secondary-foreground: var(--brand-deep-teal);
+  --muted: var(--brand-tint);
+  --muted-foreground: #52696d;
+  --accent: var(--brand-tint);
+  --accent-foreground: var(--brand-deep-teal);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.52 0.13 165);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
+  --border: #d5e6e8;
+  --input: #c9dee1;
+  --ring: var(--brand-teal);
+  --chart-1: var(--brand-teal);
+  --chart-2: var(--brand-teal-bright);
+  --chart-3: var(--brand-coral);
+  --chart-4: var(--brand-mist);
+  --chart-5: var(--brand-deep-teal);
   --radius: 0.625rem;
   --success: oklch(0.6 0.15 150);
   --warning: oklch(0.75 0.16 70);
   --info: oklch(0.58 0.17 250);
   --map-busy: oklch(0.58 0.17 250);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: var(--brand-tint);
+  --sidebar-foreground: var(--brand-deep-teal);
+  --sidebar-primary: var(--brand-teal);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ffffff;
+  --sidebar-accent-foreground: var(--brand-deep-teal);
+  --sidebar-border: #d5e6e8;
+  --sidebar-ring: var(--brand-teal);
 }
 
+/* Dark layouts use a deep teal base (Brand Book p.14). The portal ships light; this keeps any dark surface on-brand. */
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.72 0.14 165);
-  --primary-foreground: oklch(0.18 0.03 165);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --background: var(--brand-deep-teal);
+  --foreground: #ffffff;
+  --card: #0f3a40;
+  --card-foreground: #ffffff;
+  --popover: #0f3a40;
+  --popover-foreground: #ffffff;
+  --primary: var(--brand-teal-bright);
+  --primary-foreground: #ffffff;
+  --secondary: #134a52;
+  --secondary-foreground: #ffffff;
+  --muted: #134a52;
+  --muted-foreground: var(--brand-mist);
+  --accent: #134a52;
+  --accent-foreground: #ffffff;
   --destructive: oklch(0.704 0.191 22.216);
   --success: oklch(0.7 0.15 150);
   --warning: oklch(0.8 0.15 75);
   --info: oklch(0.7 0.14 250);
   --map-busy: oklch(0.7 0.14 250);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 18%);
+  --ring: var(--brand-teal-bright);
+  --chart-1: var(--brand-teal-bright);
+  --chart-2: var(--brand-mist);
+  --chart-3: var(--brand-coral);
+  --chart-4: var(--brand-coral-light);
+  --chart-5: #ffffff;
+  --sidebar: #0f3a40;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: var(--brand-teal-bright);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #134a52;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: var(--brand-teal-bright);
 }
 
 @layer base {
@@ -138,4 +158,13 @@
   html {
     @apply font-sans;
   }
+}
+
+/* Short coral bar under a headline, about a sixth of its width (Brand Book p.17). */
+@utility accent-bar {
+  display: block;
+  height: 4px;
+  width: 3rem;
+  border-radius: 9999px;
+  background-color: var(--brand-coral);
 }

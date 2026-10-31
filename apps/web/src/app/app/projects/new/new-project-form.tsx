@@ -250,7 +250,7 @@ export function NewProjectForm({ now }: { now: number }) {
 
       <p className="flex items-start gap-2 rounded-lg bg-primary/5 p-3 text-sm text-muted-foreground">
         <ShieldCheck className="mt-0.5 size-4 shrink-0 text-primary" />
-        Earthclique checks every requirement before vendors see it (usually within one working day).
+        EarthClique checks every requirement before vendors see it (usually within one working day).
       </p>
 
       <FormError message={error} />

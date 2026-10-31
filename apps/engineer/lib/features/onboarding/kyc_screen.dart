@@ -81,7 +81,7 @@ class _KycScreenState extends ConsumerState<KycScreen> {
         children: [
           if (!widget.editing) ...[const StepHeader(step: 2, total: 2, title: 'Verify your identity'), const SizedBox(height: 12)],
           Text(
-            'Earthclique verifies every engineer before they receive jobs. Documents are only seen by our team.',
+            'EarthClique verifies every engineer before they receive jobs. Documents are only seen by our team.',
             style: text.bodyMedium,
           ),
           const SizedBox(height: 20),

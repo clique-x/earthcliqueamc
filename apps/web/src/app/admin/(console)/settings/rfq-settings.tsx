@@ -72,9 +72,9 @@ function RfqSettingsForm({ initial, onSaved }: { initial: RfqConfig; onSaved: (c
 
           <div className="flex items-start justify-between gap-4 rounded-lg border p-3">
             <div className="space-y-1">
-              <Label htmlFor={bidsId}>Allow Earthclique&apos;s own vendor account to bid</Label>
+              <Label htmlFor={bidsId}>Allow EarthClique&apos;s own vendor account to bid</Label>
               <p className="text-xs text-muted-foreground">
-                When on, vendors marked &ldquo;Earthclique&apos;s own vendor&rdquo; are matched like any other. Earthclique then competes with the vendors it vets, so keep this off unless the conflict of interest has been disclosed to companies.
+                When on, vendors marked &ldquo;EarthClique&apos;s own vendor&rdquo; are matched like any other. EarthClique then competes with the vendors it vets, so keep this off unless the conflict of interest has been disclosed to companies.
               </p>
             </div>
             <Switch id={bidsId} checked={cfg.earthcliqueBids} onCheckedChange={(earthcliqueBids) => setCfg({ ...cfg, earthcliqueBids })} />

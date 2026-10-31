@@ -227,7 +227,7 @@ type QuoteSubmit = z.infer<typeof quoteSubmitSchema>;
 async function assertVendorMayQuote(vendorId: string, r: Requirement) {
   const vendor = await db.query.vendors.findFirst({ where: eq(vendors.id, vendorId) });
   if (!vendor || vendor.status !== "approved") throw forbidden("Your vendor account is not verified yet");
-  if (!vendor.subscriptionUntil || vendor.subscriptionUntil < new Date()) throw forbidden("An active Earthclique subscription is needed to quote");
+  if (!vendor.subscriptionUntil || vendor.subscriptionUntil < new Date()) throw forbidden("An active EarthClique subscription is needed to quote");
   const invite = await db.query.requirementVendors.findFirst({
     where: and(eq(requirementVendors.requirementId, r.id), eq(requirementVendors.vendorId, vendorId)),
   });

@@ -37,7 +37,7 @@ function StatusBanner({ me }: { me: VendorMe }) {
       <Alert variant="destructive" className="mb-6">
         <AlertTriangle />
         <AlertTitle>{vendor.status === "rejected" ? "Your account was not approved" : "Your account is suspended"}</AlertTitle>
-        <AlertDescription>{vendor.rejectionReason || "Contact Earthclique for details."}</AlertDescription>
+        <AlertDescription>{vendor.rejectionReason || "Contact EarthClique for details."}</AlertDescription>
       </Alert>
     );
   }
@@ -46,7 +46,7 @@ function StatusBanner({ me }: { me: VendorMe }) {
       <Alert className="mb-6 border-warning/40 bg-warning/10">
         <AlertTriangle />
         <AlertTitle>Subscription not active</AlertTitle>
-        <AlertDescription>An active Earthclique subscription is needed to receive requirements and quote. Contact Earthclique to activate.</AlertDescription>
+        <AlertDescription>An active EarthClique subscription is needed to receive requirements and quote. Contact EarthClique to activate.</AlertDescription>
       </Alert>
     );
   }

@@ -30,9 +30,9 @@ class WaitingScreen extends ConsumerWidget {
       EngineerStatus.rejected => (
         Icons.cancel_outlined,
         'Application not approved',
-        me?.rejectionReason?.isNotEmpty == true ? me!.rejectionReason! : 'Please contact Earthclique support.',
+        me?.rejectionReason?.isNotEmpty == true ? me!.rejectionReason! : 'Please contact EarthClique support.',
       ),
-      EngineerStatus.suspended => (Icons.block, 'Account suspended', 'Please contact Earthclique support.'),
+      EngineerStatus.suspended => (Icons.block, 'Account suspended', 'Please contact EarthClique support.'),
       _ => (
         Icons.hourglass_top,
         'Waiting for approval',
@@ -41,7 +41,7 @@ class WaitingScreen extends ConsumerWidget {
     };
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Earthclique Engineer'),
+        title: const Text('EarthClique Engineer'),
         actions: [TextButton(onPressed: () => ref.read(sessionProvider.notifier).signOut(), child: const Text('Sign out'))],
       ),
       body: RefreshIndicator(

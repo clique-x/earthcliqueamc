@@ -64,7 +64,7 @@ class _EngineerAppState extends ConsumerState<EngineerApp> {
     });
 
     return MaterialApp.router(
-      title: 'Earthclique Engineer',
+      title: 'EarthClique Engineer',
       theme: AppTheme.light(),
       routerConfig: router,
       scaffoldMessengerKey: rootMessengerKey,

@@ -19,7 +19,7 @@ import { useRealtime } from "@/lib/realtime";
 import type { RequirementDetail } from "@/lib/rfq-types";
 import { useApi } from "@/lib/use-api";
 
-const ACTOR_LABEL = { company: "You", vendor: "Vendor", admin: "Earthclique ops", system: "System" } as const;
+const ACTOR_LABEL = { company: "You", vendor: "Vendor", admin: "EarthClique ops", system: "System" } as const;
 const EDITABLE = ["SUBMITTED", "OPEN"];
 
 export function CompanyProject({ params }: { params: Promise<{ id: string }> }) {
@@ -128,7 +128,7 @@ export function CompanyProject({ params }: { params: Promise<{ id: string }> }) 
           <CardContent>
             <ol className="space-y-3 text-sm">
               {[
-                ["Ops review", "Earthclique checks the requirement, usually within one working day."],
+                ["Ops review", "EarthClique checks the requirement, usually within one working day."],
                 ["Vendors quote", "Verified vendors in your state are invited and send itemised quotes before the deadline."],
                 ["Compare", "Line items, timelines, warranty and payment terms side by side. Shortlist or ask for revisions."],
                 ["Award", "Pick one vendor — their contact details are shared and the others are informed."],
@@ -157,7 +157,7 @@ function StatusCard({ r, awardedVendor }: { r: RequirementDetail; awardedVendor:
           <CardContent className="flex items-center gap-3 py-4">
             <Clock className="size-5 shrink-0 text-warning" />
             <div>
-              <p className="font-medium">Under review by Earthclique ops</p>
+              <p className="font-medium">Under review by EarthClique ops</p>
               <p className="text-sm text-muted-foreground">Vendors will be invited once approved — usually within one working day.</p>
             </div>
           </CardContent>
@@ -189,7 +189,7 @@ function StatusCard({ r, awardedVendor }: { r: RequirementDetail; awardedVendor:
           <CardContent className="flex flex-wrap items-center gap-3 py-4">
             <XCircle className="size-5 shrink-0 text-destructive" />
             <div className="min-w-0 flex-1">
-              <p className="font-medium">Not approved by Earthclique ops</p>
+              <p className="font-medium">Not approved by EarthClique ops</p>
               <p className="text-sm text-muted-foreground">{r.rejectionReason || "No reason was given."}</p>
             </div>
             <Button asChild variant="outline">
